@@ -17,7 +17,7 @@ import static com.example.cxc.startproject_316cxc.R.id.editText;
 public class MainActivity extends AppCompatActivity implements WeatherListener,View.OnClickListener{
     private EditText etcityno;
     private Button btnfind1,btnfind2;
-    private TextView tvcityname;
+    private TextView tvcityname,tvcityname2,tvcityname3,tvcityname4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements WeatherListener,V
         btnfind1=(Button)findViewById(R.id.button);
         btnfind2=(Button)findViewById(R.id.button2);
         tvcityname=(TextView)findViewById(R.id.textView);
+        tvcityname2=(TextView)findViewById(R.id.textView2);
+        tvcityname3=(TextView)findViewById(R.id.textView7);
+        tvcityname4=(TextView)findViewById(R.id.textView9);
 
         btnfind1.setOnClickListener(this);
         btnfind2.setOnClickListener(this);
@@ -39,16 +42,22 @@ public class MainActivity extends AppCompatActivity implements WeatherListener,V
     public void onResponse(WeatherInfo weatherInfo) {
         if(weatherInfo!=null){
             tvcityname.setText(weatherInfo.getCity());
-
+            tvcityname2.setText(weatherInfo.getWD());
+            tvcityname3.setText(weatherInfo.getTemp());
+            tvcityname4.setText(weatherInfo.getSD());
         }else {
             tvcityname.setText("未知");
+            tvcityname2.setText("未知");
+            tvcityname3.setText("未知");
+            tvcityname4.setText("未知");
         }
+
     }
 
     @Override
     public void OnFail(String msg) {
         tvcityname.setText(msg);
-
+        tvcityname2.setText(msg);
     }
 
     @Override/*所有点击事件都在这里实现*/
