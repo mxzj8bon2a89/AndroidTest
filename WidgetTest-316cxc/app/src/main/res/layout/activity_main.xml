@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.cxc.widgettest_316cxc.MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:hint="请输入内容"
+        android:layout_width="133dp"
+        android:layout_height="25dp"
+        android:id="@+id/textView" />
+
+    <EditText
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取内容"
+        android:id="@+id/btngetContent" />
+    <LinearLayout
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/iv" />
+        <Button
+        android:text="切换图片"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnswap" />
+    </LinearLayout>
+
+
+    <ImageButton
+        android:layout_width="104dp"
+        android:layout_height="96dp"
+        app:srcCompat="@drawable/guge"
+        android:id="@+id/imageButton" />
+
+    <LinearLayout
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="篮球"
+            android:id="@+id/cbbaseket" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="足球"
+            android:id="@+id/cbfootball" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="游泳"
+            android:id="@+id/cbswim" />
+    </LinearLayout>
+
+    <Button
+        android:text="获取爱好"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnhobby" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:orientation="horizontal"
+        android:id="@+id/rg" >
+
+        <Button
+            android:text="获取性别"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btngetsex"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="男"
+            android:layout_width="69dp"
+            android:layout_height="48dp"
+            android:id="@+id/rbmale"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="女"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbfemale"
+            android:layout_weight="1.15" />
+    </RadioGroup>
+
+
+</LinearLayout>
