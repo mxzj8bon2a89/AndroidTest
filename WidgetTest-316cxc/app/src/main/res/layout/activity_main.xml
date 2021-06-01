@@ -37,11 +37,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="1">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_launcher"
             android:id="@+id/iv" />
+
         <Button
         android:text="切换图片"
         android:layout_width="match_parent"

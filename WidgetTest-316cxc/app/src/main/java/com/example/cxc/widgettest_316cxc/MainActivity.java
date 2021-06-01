@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RadioButton rbmale,rbfemale;
     private CheckBox cbbaseket,cbfootball,cbswim;
     private RadioGroup rg;
+    private String strfun = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btngetsex.setOnClickListener(this);
         btngetContent.setOnClickListener(this);
         btnhobby.setOnClickListener(this);
+        cbbaseket.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){//蓝球被勾选
+                    strfun+="篮球+";
+
+                } else {
+                    strfun = strfun.replace("篮球+","");
+                    textView.setText(strfun);
+                }
+            }
+        });
+        cbfootball.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                    strfun+="足球+";
+                else {
+                    strfun = strfun.replace("足球+","");
+                    textView.setText(strfun);
+                }
+            }
+        });
+        cbswim.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    strfun+="游泳+";
+                else
+                    strfun = strfun.replace("游泳+","");
+                textView.setText(strfun);
+            }
+        });
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.rbmale:
+                        textView.setText("男");
+                        break;
+                    case R.id.rbfemale:
+                        textView.setText("女");
+                        break;
+                }
+            }
+        });
     }
     @Override
     public void onClick(View v) {
@@ -73,12 +121,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnhobby:
                 String msg="";
-                if(cbbaseket.isChecked()) msg="篮球";
-                if(cbfootball.isChecked()) msg="足球";
-                if(cbswim.isChecked()) msg="游泳";
+                if(cbbaseket.isChecked()) msg+="篮球+";
+                if(cbfootball.isChecked()) msg+="足球+";
+                if(cbswim.isChecked()) msg+="游泳+";
                 textView.setText(msg);
                 break;
         }
     }
-
 }
